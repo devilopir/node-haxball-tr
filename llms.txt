@@ -1,0 +1,64 @@
+# node-haxball-tr
+
+> [node-haxball](https://github.com/wxyz-abcd/node-haxball) (v2.3.0) için kapsamlı Türkçe dokümantasyon: 41 dosya, başlangıç rehberinden referans API'ye kadar Haxball headless host bot geliştirme.
+
+node-haxball, Haxball oyununun protokolünü Node.js'te baştan implement eden bir kütüphanedir. Bu repo o kütüphanenin Türkçe konuşan geliştiriciler için yapılandırılmış başvuru kaynağıdır. İçerikler `node-haxball@2.3.0`'in `src/index.d.ts`'ine karşı statik doğrulamadan, runtime API yüzey testinden ve sandbox lifecycle smoke testinden geçmiştir.
+
+## Başlangıç
+
+- [Haxball nedir, headless host nedir](docs/baslangic/01-haxball-nedir.md): Haxball'un mimarisi, host/client/backend rolleri, IP başına 2 oda limiti, token expire davranışı
+- [Kurulum ve token alma](docs/baslangic/02-kurulum-ve-token.md): Node sürümü, npm install, headless token süreci
+- [İlk oda: host bot](docs/baslangic/03-ilk-oda.md): ~30 satır çalışan host bot kodu, sendAnnouncement parametre açıklamaları
+- [İlk istemci: odaya katılan bot](docs/baslangic/04-ilk-istemci.md): Room.join + auth lifecycle + reconnect kalıbı
+
+## Rehber
+
+- [Mimari: host, client, standalone, sandbox](docs/rehber/01-mimari.md): Dört çalışma modunun karşılaştırması, hangisinin ne zaman kullanılacağı
+- [Room.create](docs/rehber/02-room-create.md): Tüm createParams ve commonParams alanları, yaşam döngüsü callback sırası
+- [Room.join](docs/rehber/03-room-join.md): Auth.generateAuth / authFromKey kullanımı, üstel backoff'lu reconnect kalıbı
+- [Callback sistemi](docs/rehber/04-callback-sistemi.md): Üç callback yöntemi (room.onX, RoomConfig, Plugin Before/After), customData zinciri
+- [Oyun akışı event'leri](docs/rehber/05-event-akisi.md): Maç yaşam döngüsü sırası, Player vs id parametre tasarımı
+- [Oyuncu yönetimi](docs/rehber/06-oyuncu-yonetimi.md): Takım, admin, kick/ban, avatar yönetimi, kalıcı ban listesi
+- [Oyun kontrolü](docs/rehber/07-oyun-akisi.md): start/stop/pause, skor/süre limiti, stadium değişimi, takım kilidi
+- [Stadyum dosyası ve disc fiziği](docs/rehber/08-stadyum-ve-disc.md): .hbs format, setCurrentStadium, top sahibi tespiti
+- [Addon sistemi](docs/rehber/09-addon-sistemi.md): RoomConfig, Plugin, Library, Renderer farkları
+- [Plugin yazma](docs/rehber/10-plugin-yazma.md): Function-constructor pattern ile pratik AFK kick plugin
+- [Utils ve auth](docs/rehber/11-utils-ve-auth.md): generateAuth, getRoomList, parseStadium, renk/IP dönüşümleri
+- [Veri saklama](docs/rehber/12-veri-saklama.md): JSON, SQLite, Redis karşılaştırması
+- [Replay](docs/rehber/13-replay.md): startRecording/stopRecording, Replay.readAll/trim/writeAll
+- [EventFactory ve protokol katmanı](docs/rehber/14-eventfactory-ve-protokol.md): Düşük seviye event üretimi, custom event protokolü
+- [Tarayıcıda kullanım](docs/rehber/15-tarayicida-kullanim.md): Proxy server vs origin modifier extension
+- [Proxy, deploy ve IP limiti](docs/rehber/16-proxy-deploy.md): VPS seçimi, systemd/pm2, monitoring
+- [Sandbox ve stream watcher](docs/rehber/17-sandbox-ve-stream.md): Offline simülasyon, snapshot/runSteps, deterministik test
+- [Yerelleştirme (Language API)](docs/rehber/18-yerellestirme.md): Errors.HBError mesajlarını Türkçeleştirme
+
+## Tutorial
+
+- [Temel host bot](docs/tutoriallar/01-temel-host-bot.md): ~80 satır admin atama + otomatik maç başlatma + dengeleme
+- [Komut çerçevesi](docs/tutoriallar/02-komut-cercevesi.md): Genişletilebilir komut sistemi (defineCommand kalıbı)
+- [AFK kick botu](docs/tutoriallar/03-afk-kick-botu.md): İki aşamalı (önce spec'e at, sonra kick) AFK detection
+- [Takım dengeleme](docs/tutoriallar/04-takim-dengeleme.md): Rotation, ELO ve winner-stays üç strateji
+- [İstatistik takibi](docs/tutoriallar/05-istatistik-takibi.md): SQLite ile gol/asist/maç istatistikleri
+- [Admin yetki sistemi](docs/tutoriallar/06-admin-yetki-sistemi.md): Auth-bazlı rol hiyerarşisi (owner/admin/mod/vip)
+- [İstemci botu](docs/tutoriallar/07-istemci-bot.md): Room.join ile lig duyurucu + Discord webhook köprüsü
+- [Replay analizi](docs/tutoriallar/08-replay-analizi.md): .hbr dosyalarından CSV istatistik çıkarma
+
+## Referans
+
+- [Room API](docs/referans/room-api.md): Tüm Room methodları mantıksal olarak gruplanmış
+- [Callback listesi](docs/referans/callbacks.md): Tüm event callback'leri parametre listeleriyle
+- [Utils namespace](docs/referans/utils.md): Yardımcı fonksiyonların tam referansı
+- [Enum'lar](docs/referans/enums.md): OperationType, CollisionFlags, Direction ve diğerleri
+- [Tipler](docs/referans/tipler.md): Player, Disc, Stadium, RoomState ve diğer veri yapıları
+- [Addon base sınıfları](docs/referans/addon-api.md): Plugin/RoomConfig/Library/Renderer constructor imzaları
+- [EventFactory](docs/referans/eventfactory.md): Tüm protokol event üreteçleri
+- [Replay API](docs/referans/replay-api.md): readAll, read, trim, writeAll detayları
+- [Query namespace](docs/referans/query.md): Map koordinatına göre vertex/segment/disc/goal sorguları
+- [Renderer API](docs/referans/renderer-api.md): Görsel render katmanı, koordinat dönüşümü, hazır renderer'lar
+- [Hata kodları](docs/referans/errors.md): Errors.ErrorCodes enum'unun tam Türkçe açıklaması
+
+## Ortak
+
+- [.hbs stadyum dosya formatı](docs/ortak/stadyum-formati.md): JSON5 türevi format detayları
+- [Sık yapılan hatalar](docs/ortak/sik-yapilan-hatalar.md): node-haxball'ın resmi HBInit'ten farkları, tipik bug'lar
+- [Sözlük](docs/ortak/sozluk.md): Haxball ve node-haxball terimlerinin Türkçe açıklamaları

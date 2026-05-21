@@ -1,0 +1,128 @@
+site_name: node-haxball-tr
+site_description: node-haxball için Türkçe dokümantasyon, rehber ve tutorial koleksiyonu
+site_url: https://devilopir.github.io/node-haxball-tr/
+repo_url: https://github.com/devilopir/node-haxball-tr
+repo_name: devilopir/node-haxball-tr
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: tr
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Karanlık moda geç
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Aydınlık moda geç
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.keys
+
+nav:
+  - Ana sayfa: index.md
+  - Başlangıç:
+    - baslangic/01-haxball-nedir.md
+    - baslangic/02-kurulum-ve-token.md
+    - baslangic/03-ilk-oda.md
+    - baslangic/04-ilk-istemci.md
+  - Rehber:
+    - rehber/01-mimari.md
+    - rehber/02-room-create.md
+    - rehber/03-room-join.md
+    - rehber/04-callback-sistemi.md
+    - rehber/05-event-akisi.md
+    - rehber/06-oyuncu-yonetimi.md
+    - rehber/07-oyun-akisi.md
+    - rehber/08-stadyum-ve-disc.md
+    - rehber/09-addon-sistemi.md
+    - rehber/10-plugin-yazma.md
+    - rehber/11-utils-ve-auth.md
+    - rehber/12-veri-saklama.md
+    - rehber/13-replay.md
+    - rehber/14-eventfactory-ve-protokol.md
+    - rehber/15-tarayicida-kullanim.md
+    - rehber/16-proxy-deploy.md
+    - rehber/17-sandbox-ve-stream.md
+    - rehber/18-yerellestirme.md
+  - Tutorial:
+    - tutoriallar/01-temel-host-bot.md
+    - tutoriallar/02-komut-cercevesi.md
+    - tutoriallar/03-afk-kick-botu.md
+    - tutoriallar/04-takim-dengeleme.md
+    - tutoriallar/05-istatistik-takibi.md
+    - tutoriallar/06-admin-yetki-sistemi.md
+    - tutoriallar/07-istemci-bot.md
+    - tutoriallar/08-replay-analizi.md
+  - Referans:
+    - referans/room-api.md
+    - referans/callbacks.md
+    - referans/utils.md
+    - referans/enums.md
+    - referans/tipler.md
+    - referans/addon-api.md
+    - referans/eventfactory.md
+    - referans/replay-api.md
+    - referans/query.md
+    - referans/renderer-api.md
+    - referans/errors.md
+  - Ek:
+    - ortak/stadyum-formati.md
+    - ortak/sik-yapilan-hatalar.md
+    - ortak/sozluk.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/devilopir/node-haxball-tr

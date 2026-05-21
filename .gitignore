@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+*.log
+auth.key
+client-auth.key
+elo.json
+roles.json
+bans.json
+data/
+replays/
+logs/
+.env
+.env.local
